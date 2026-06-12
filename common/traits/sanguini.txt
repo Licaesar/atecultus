@@ -1,0 +1,104 @@
+﻿sanguini_1 = {
+	opposites = { sanguini_2 }
+
+	inbreeding_chance = -1
+	health = 0.25
+	attraction_opinion = 5
+	monthly_prestige = 0.05
+	diplomacy = 1
+	learning = 5
+	prowess = 20
+	monthly_lifestyle_xp_gain_mult = 0.2
+	fertility = -0.25
+
+	group = sanguini
+	level = 1
+
+
+	good = yes
+	physical = yes
+
+	birth = 0
+	random_creation = 0
+
+	
+	ruler_designer_cost = 5
+	icon = sanguini_1.dds
+
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_sanguini_1_desc }
+			desc = trait_sanguini_1_character_desc
+		}
+	}
+	ai_rationality = high_positive_ai_value
+	compatibility = {
+		sanguini_1 = @pos_compat_medium
+		sanguini_2 = @pos_compat_medium
+	}
+}
+
+sanguini_2 = {
+	opposites = { sanguini_1 }
+
+	inbreeding_chance = -1
+	health = 0.5
+	attraction_opinion = 10
+	monthly_prestige = 0.10
+	diplomacy = 2
+	learning = 10
+	prowess = 100
+	monthly_lifestyle_xp_gain_mult = 0.5
+	fertility = -0.50
+
+	group = sanguini
+	level = 2
+
+	good = yes
+	physical = yes
+
+	birth = 0
+	random_creation = 0
+
+
+	ruler_designer_cost = 10
+	icon = sanguini_2.dds
+
+	desc = {
+		first_valid = {
+			triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_sanguini_2_desc }
+			desc = trait_sanguini_2_character_desc
+		}
+	}
+	ai_rationality = very_high_positive_ai_value
+	compatibility = {
+		sanguini_1 = @pos_compat_medium
+		sanguini_2 = @pos_compat_medium
+	}
+}
+
+
+apostolus = {
+	category = fame
+	birth = 0
+	inherit_chance = 100
+	random_creation = 0
+
+	same_faith_opinion = 10
+    inbreeding_chance = -1
+	monthly_piety = 0.5
+	inherit_from_real_father = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_apostolus_desc
+			}
+			desc = trait_apostolus_character_desc
+		}
+	}
+
+}

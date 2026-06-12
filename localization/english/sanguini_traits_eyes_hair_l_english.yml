@@ -1,0 +1,16 @@
+﻿l_english:
+  ##############################################
+  # DIVINUS SANGUINIUS TRAITS — IMPERIAL BLOODLINE
+  ##############################################
+
+  trait_sanguini_1:0 "Sanguinius"
+  trait_sanguini_1_desc:0 "A trace of the Deus Imperator’s essence flows within their veins — a faint glimmer of divinity amidst mortal flesh."
+  trait_sanguini_1_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] bears a distant spark of the Blood of the Imperator."
+
+  trait_sanguini_2:0 "Divinus Sanguinius"
+  trait_sanguini_2_desc:0 "Their eyes gleam faintly with violet light and silver strands touch their hair — the mark of a true descendant of Deus Imperator."
+  trait_sanguini_2_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] carries the blessed Bloodline of the Imperator, purer than most."
+ 
+  trait_apostolus:0 "Apostolus"
+  trait_apostolus_desc:0 "Ego sum servus Omnissiah, is sum qui in missionem mittitur. Per me, voluntas Omnissiah implebitur, et mundus eius perfectionem cognoscet."
+  trait_apostolus_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] bears the sacred blood of the Omnissiah Apostolus, chosen to carry forth the divine mission and enact the will of the Deus Imperator."

@@ -1,0 +1,108 @@
+﻿# Herança de traços Sanguini considerando pai biológico
+# Nota: pai biológico = scope:real_father se existir; caso contrário usa scope:father
+sanguini_inheritance_effect = {
+    # Recebe o recém-nascido como ROOT (ou scope:child)
+    hidden_effect = {
+        # Regra 1: mãe (s2) e pai biológico (s2) -> herda sanguini_2
+        if = {
+            limit = {
+                scope:mother = { has_trait = sanguini_2 }
+                OR = {
+                    AND = { exists = scope:real_father scope:real_father = { has_trait = sanguini_2 } }
+                    AND = { NOT = { exists = scope:real_father } exists = scope:father scope:father = { has_trait = sanguini_2 } }
+                }
+            }
+            add_trait = sanguini_2
+        }
+
+        # Regra 2: mãe (s1) e pai biológico (s1) -> herda sanguini_1
+        else_if = {
+            limit = {
+                scope:mother = { has_trait = sanguini_1 }
+                OR = {
+                    AND = { exists = scope:real_father scope:real_father = { has_trait = sanguini_1 } }
+                    AND = { NOT = { exists = scope:real_father } exists = scope:father scope:father = { has_trait = sanguini_1 } }
+                }
+            }
+            add_trait = sanguini_1
+        }
+
+        # Regra 3: um dos pais (s2) e o outro NÃO sanguini -> herda sanguini_1
+        # (Inclui casos de traição: usa real_father se existir)
+        else_if = {
+            limit = {
+                OR = {
+                    # mãe s2, pai biológico não-sanguini
+                    AND = {
+                        scope:mother = { has_trait = sanguini_2 }
+                        OR = {
+                            AND = { exists = scope:real_father scope:real_father = { NOR = { has_trait = sanguini_1 has_trait = sanguini_2 } } }
+                            AND = { NOT = { exists = scope:real_father } OR = { NOT = { exists = scope:father } AND = { exists = scope:father scope:father = { NOR = { has_trait = sanguini_1 has_trait = sanguini_2 } } } } }
+                        }
+                    }
+                    # pai biológico s2, mãe não-sanguini
+                    AND = {
+                        scope:mother = { NOR = { has_trait = sanguini_1 has_trait = sanguini_2 } }
+                        OR = {
+                            AND = { exists = scope:real_father scope:real_father = { has_trait = sanguini_2 } }
+                            AND = { NOT = { exists = scope:real_father } exists = scope:father scope:father = { has_trait = sanguini_2 } }
+                        }
+                    }
+                }
+            }
+            add_trait = sanguini_1
+        }
+
+        # Regra 4: um dos pais (s2) e o outro (s1) -> herda sanguini_1
+        else_if = {
+            limit = {
+                OR = {
+                    AND = {
+                        scope:mother = { has_trait = sanguini_2 }
+                        OR = {
+                            AND = { exists = scope:real_father scope:real_father = { has_trait = sanguini_1 } }
+                            AND = { NOT = { exists = scope:real_father } exists = scope:father scope:father = { has_trait = sanguini_1 } }
+                        }
+                    }
+                    AND = {
+                        scope:mother = { has_trait = sanguini_1 }
+                        OR = {
+                            AND = { exists = scope:real_father scope:real_father = { has_trait = sanguini_2 } }
+                            AND = { NOT = { exists = scope:real_father } exists = scope:father scope:father = { has_trait = sanguini_2 } }
+                        }
+                    }
+                }
+            }
+            add_trait = sanguini_1
+        }
+
+        # Regra 5: um dos pais (s1) e o outro NÃO sanguini -> 40% de chance de herdar sanguini_1
+        else_if = {
+            limit = {
+                OR = {
+                    # mãe s1, pai biológico não-sanguini
+                    AND = {
+                        scope:mother = { has_trait = sanguini_1 }
+                        OR = {
+                            AND = { exists = scope:real_father scope:real_father = { NOR = { has_trait = sanguini_1 has_trait = sanguini_2 } } }
+                            AND = { NOT = { exists = scope:real_father } OR = { NOT = { exists = scope:father } AND = { exists = scope:father scope:father = { NOR = { has_trait = sanguini_1 has_trait = sanguini_2 } } } } }
+                        }
+                    }
+                    # pai biológico s1, mãe não-sanguini
+                    AND = {
+                        scope:mother = { NOR = { has_trait = sanguini_1 has_trait = sanguini_2 } }
+                        OR = {
+                            AND = { exists = scope:real_father scope:real_father = { has_trait = sanguini_1 } }
+                            AND = { NOT = { exists = scope:real_father } exists = scope:father scope:father = { has_trait = sanguini_1 } }
+                        }
+                    }
+                }
+            }
+            random = {
+                chance = 40
+                add_trait = sanguini_1
+            }
+        }
+    }
+}
+
