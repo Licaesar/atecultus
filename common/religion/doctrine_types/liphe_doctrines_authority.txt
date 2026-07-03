@@ -5,8 +5,8 @@
 	}
 	traits = {
 		virtues = {
-			sanguini_2
-			sanguini_1
+			sanguini_5
+			sanguini_4
 			education_learning_3
 			education_learning_4
 			education_learning_5
@@ -59,8 +59,8 @@ temple_authority_cult_sororitas_doctrine = { # Culto a Undomiel
 	}
 	traits = {
 		virtues = {
-			sanguini_2
-			sanguini_1
+			sanguini_5
+			sanguini_4
 			education_learning_3
 			education_learning_4
 			education_learning_5

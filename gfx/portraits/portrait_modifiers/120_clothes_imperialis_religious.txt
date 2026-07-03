@@ -6,7 +6,7 @@
 
 ## Imperialis ##
 
-    religious_imperialis_head_clothes = { # The Pope teoricamente
+    religious_imperialis_head_clothes = { # k_sol
         dna_modifiers = {
             accessory = {
                 mode = add
@@ -14,24 +14,37 @@
                 template = religious_orthodox_head_clothes
                 range = { 0 1 }
             }
+            accessory = {
+                mode = add
+                gene = ate_clothes
+                template = ate_empty_clothing
+                range = { 0 1 } # For the randomness to work correctly
+            }
         }
         weight = {
             base = 0
             modifier = {
                 add = 150
                 portrait_religious_head_trigger = yes
-                portrait_religious_imperialis_trigger = yes
+                #portrait_religious_imperialis_trigger = yes
+                religion = religion:imperialis_religion
             }
         }
     }  
 
     religious_imperialis_high_clothes = { # Imperialis Bishops and Priests
-        dna_modifiers = {
+         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = clothes
                 template = religious_orthodox_high_clothes
                 range = { 0 1 }
+            }
+            accessory = {
+                mode = add
+                gene = ate_clothes
+                template = ate_empty_clothing
+                range = { 0 1 } # For the randomness to work correctly
             }
         }
         outfit_tags = { priest_outfit bishop_outfit }
@@ -40,30 +53,31 @@
             modifier = {
                 add = 120
                 portrait_religious_high_trigger = yes
-                portrait_religious_imperialis_trigger = yes
+                #portrait_religious_imperialis_trigger = yes
+                religion = religion:imperialis_religion
             }
         }
     }
 	
-	religious_imperialis_devoted_clothes = { # Imperialis Monks and Nuns
-        dna_modifiers = {
-            accessory = {
-                mode = add
-                gene = clothes
-                template = religious_catholic_devoted_clothes
-                range = { 0 1 } # For the randomness to work correctly
-            }
-        }
-        outfit_tags = { monk_outfit }
-        weight = {
-            base = 0
-            modifier = {
-                add = 100
-                portrait_religious_devoted_trigger = yes
-                portrait_religious_imperialis_trigger = yes
-            }
-        }
-    }
+#	religious_imperialis_devoted_clothes = { # Imperialis Monks and Nuns
+#        dna_modifiers = {
+#            accessory = {
+#                mode = add
+#                gene = clothes
+#                template = religious_catholic_devoted_clothes
+#                range = { 0 1 } # For the randomness to work correctly
+#            }
+#        }
+#        outfit_tags = { monk_outfit }
+#        weight = {
+#            base = 0
+#            modifier = {
+#                add = 100
+#                portrait_religious_devoted_trigger = yes
+#                portrait_religious_imperialis_trigger = yes
+#            }
+#        }
+#    }
 
 
 }

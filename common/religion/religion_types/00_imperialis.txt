@@ -7,17 +7,21 @@
 	doctrine = pagan_hostility_doctrine
 
 	#Main Group
-	doctrine = doctrine_monotheist
+	#doctrine = doctrine_monotheist
 	doctrine = doctrine_spiritual_head
 	doctrine = doctrine_gender_male_dominated
 	doctrine = doctrine_pluralism_righteous
 	doctrine = doctrine_theocracy_temporal
+	doctrine = doctrine_pilgrimage_encouraged
 
 	#Marriage
 	doctrine = doctrine_monogamy
 	doctrine = doctrine_divorce_approval
 	doctrine = doctrine_bastardry_legitimization
 	doctrine = doctrine_consanguinity_unrestricted
+	#Coisa nova
+	doctrine = ao_doctrine_adoption_reason_infertile
+	doctrine = ao_doctrine_adoption_relation_any
 
 	#Crimes
 	doctrine = doctrine_homosexuality_crime
@@ -32,9 +36,9 @@
 	doctrine = doctrine_clerical_gender_either
 	doctrine = doctrine_clerical_marriage_allowed
 	doctrine = doctrine_clerical_succession_temporal_appointment
+	#Novo
+	doctrine = doctrine_building_cathedral
 
-	#Allow pilgrimages
-	doctrine = doctrine_pilgrimage_encouraged
 
 	#Funeral tradition
 	doctrine = doctrine_funeral_bewailment # Ancient Greeks were encouraged to grieve publicly
@@ -216,20 +220,25 @@
 			religious_head = k_sol
 			icon = imperialis
 
-			holy_site = rome
-			holy_site = athens
-			holy_site = constantinople
-			holy_site = alexandria
-			holy_site = carthage
-			holy_site = olympus
-			holy_site = jerusalem
-			holy_site = baghdad
-			holy_site = kusinagara
+			holy_site = washington
+			holy_site = saint_louis_ca
+			holy_site = philadelphia
+			holy_site = manhattan
+			holy_site = chicago
+			holy_site = sacramento
+			holy_site = ottawa
+			holy_site = cap_diamant_gothic
+			holy_site = montreal
+			holy_site = new_orleans
+			holy_site = san_francisco
+			holy_site = salt_lake_city
+			holy_site = atlanta
+			holy_site = detroit
 
 			#Doctrines
 			doctrine = temple_authority_cult_imperialis_doctrine
 
-			doctrine = tenet_household_gods
+			doctrine = tenet_mendicant_preachers
 			doctrine = tenet_communion
 			doctrine = tenet_ancestor_worship
 			
@@ -250,22 +259,27 @@
 			religious_head = k_sol
 			icon = sororitas
 
-			holy_site = rome
-			holy_site = athens
-			holy_site = constantinople
-			holy_site = alexandria
-			holy_site = carthage
-			holy_site = olympus
-			holy_site = jerusalem
-			holy_site = baghdad
-			holy_site = kusinagara
+			holy_site = washington
+			holy_site = saint_louis_ca
+			holy_site = philadelphia
+			holy_site = manhattan
+			holy_site = chicago
+			holy_site = sacramento
+			holy_site = ottawa
+			holy_site = cap_diamant_gothic
+			holy_site = montreal
+			holy_site = new_orleans
+			holy_site = san_francisco
+			holy_site = salt_lake_city
+			holy_site = atlanta
+			holy_site = detroit
 			
 			#Doctrines
 			doctrine = temple_authority_cult_sororitas_doctrine
 
 			doctrine = tenet_unrelenting_faith
 			doctrine = tenet_legalism
-			doctrine = tenet_ancestor_worship
+			doctrine = tenet_mendicant_preachers
 			
 			#Main Group
 			doctrine = doctrine_spiritual_head
@@ -289,21 +303,24 @@
 			religious_head = k_sol
 			icon = omnissiah
 
-			holy_site = rome
-			holy_site = athens
-			holy_site = constantinople
-			holy_site = alexandria
-			holy_site = carthage
-			holy_site = olympus
-			holy_site = jerusalem
-			holy_site = baghdad
-			holy_site = kusinagara
+			holy_site = washington
+			holy_site = saint_louis_ca
+			holy_site = philadelphia
+			holy_site = manhattan
+			holy_site = chicago
+			holy_site = sacramento
+			holy_site = ottawa
+			holy_site = cap_diamant_gothic
+			holy_site = montreal
+			holy_site = new_orleans
+			holy_site = san_francisco
+			holy_site = salt_lake_city
+			holy_site = atlanta
+			holy_site = detroit
 
 			#Doctrines
 			doctrine = temple_authority_cult_omnissiah_doctrine
 
-			#Special Doctrine for Gnostic mechanics
-			doctrine = special_doctrine_is_gnostic_faith
 
 			doctrine = tenet_mendicant_preachers
 			doctrine = tenet_legalism
@@ -330,24 +347,29 @@
 			color = { 0.25 0.55 0.85 }
 			icon = homus
 
-			holy_site = rome
-			holy_site = athens
-			holy_site = constantinople
-			holy_site = alexandria
-			holy_site = carthage
-			holy_site = olympus
-			holy_site = jerusalem
-			holy_site = baghdad
-			holy_site = kusinagara
+			holy_site = washington
+			holy_site = saint_louis_ca
+			holy_site = philadelphia
+			holy_site = manhattan
+			holy_site = chicago
+			holy_site = sacramento
+			holy_site = ottawa
+			holy_site = cap_diamant_gothic
+			holy_site = montreal
+			holy_site = new_orleans
+			holy_site = san_francisco
+			holy_site = salt_lake_city
+			holy_site = atlanta
+			holy_site = detroit
 
 			#Doctrines
 			doctrine = temple_authority_cult_homus_doctrine
 
-			#Special Doctrine for Eastern Syncretism
-			doctrine = special_doctrine_is_eastern_faith
+			#Special Doctrine TENHO QUE MUDAR ISSO DEPOIS
+			doctrine = special_doctrine_is_harmonic_faith
 
 			doctrine = tenet_mendicant_preachers
-			doctrine = tenet_eastern_syncretism
+			doctrine = tenet_esotericism
 			doctrine = tenet_ancestor_worship
 			
 			#Main Group

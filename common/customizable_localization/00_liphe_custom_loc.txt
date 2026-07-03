@@ -668,12 +668,12 @@ GetActualBishopTitle = {
 		localization_key = religious_head_name
 	}
 
-#	text = { # No longer relevant now that we scope directly to the court owner
-#		trigger = {
-#			is_playable_character = yes
-#		}
-#		localization_key = ruler_title_name
-#	}
+	#	text = { # No longer relevant now that we scope directly to the court owner
+	#		trigger = {
+	#			is_playable_character = yes
+	#		}
+	#		localization_key = ruler_title_name
+	#	}
 
 	# Religion-By-Religion Titles for Bishops based on Liege's Tier.
 
@@ -703,838 +703,380 @@ GetActualBishopTitle = {
 		localization_key = councillor_court_chaplain_imperialis_religion_kingdom_female
 	}
 	#Imperialis
+	
 
-	# Zunism
+	#Remembrant
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:zun_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
+			faith.religion = faith:remembrant.religion
+			NOT = {
+				liege.dynasty = dynasty:dynn_canada_irving
+			}
+			NOT = {
+				liege.culture = { has_name_list = name_list_gaidheal }
 			}
 		}
-		localization_key = councillor_court_chaplain_zunism_religion_kingdom
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_kingdom
-			faith.religion = faith:zun_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_zunism_religion_duchy
+		localization_key = court_chaplain_remembrant_other
 	}
 
-	# Zoroastrianism
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
+			faith.religion = faith:remembrant.religion
+			liege.culture = { has_name_list = name_list_gaidheal }
+		}
+		localization_key = court_chaplain_remembrant_gaelic
+	}
+
+	text = {
+		trigger = {
+			faith.religion = faith:remembrant.religion
+			liege.dynasty = dynasty:dynn_canada_irving
+		}
+		localization_key = court_chaplain_remembrant_irving
+	}
+
+	#Americanist
+	text = {
+		trigger = {
+			religion = religion:americanist_religion
+		}
+		localization_key = court_chaplain_americanist
+	}
+
+	#Rastafari
+	text = {
+		trigger = {
+			religion = religion:rastafari_religion
+		}
+		localization_key = court_chaplain_rastafari
+	}
+
+	#Consumerist
+	text = {
+		trigger = {
+			faith.religion = faith:consumerist.religion
+		}
+		localization_key = court_chaplain_consumerist
+	}
+
+	#Lacustrine
+	text = {
+		trigger = {
+			faith = {
+				has_doctrine = doctrine_viking_virsin
 			}
-			fp3_custom_divinity_for_zoroastrianism_faiths = yes
+			
 		}
-		localization_key = councillor_court_chaplain_zoroastrianism_religion_kingdom
+		localization_key = court_chaplain_norse
 	}
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-			fp3_custom_divinity_for_zoroastrianism_faiths = yes
-		}
-		localization_key = councillor_court_chaplain_zoroastrianism_religion_kingdom_female
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-			fp3_custom_divinity_for_zoroastrianism_faiths = yes
-		}
-		localization_key = councillor_court_chaplain_zoroastrianism_religion_duchy
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-			fp3_custom_divinity_for_zoroastrianism_faiths = yes
-		}
-		localization_key = councillor_court_chaplain_zoroastrianism_religion_duchy_female
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			fp3_custom_divinity_for_zoroastrianism_faiths = yes
-		}
-		localization_key = councillor_court_chaplain_zoroastrianism_religion_county
-	}
-	# African Roog
-	text = {
-		trigger = {
-			faith.religion = faith:west_african_roog_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_west_african_roog_religion_duchy
-	}
-	# African Bori
-	text = {
-		trigger = {
-			faith.religion = faith:west_african_bori_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
+			faith = {
+				has_doctrine = doctrine_lakeshore_virsin
 			}
 		}
-		localization_key = councillor_court_chaplain_west_african_bori_religion_duchy
-	}
-	text = {
-		trigger = {
-			faith.religion = faith:west_african_bori_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_west_african_bori_religion_duchy_female
-	}
-	# African
-	text = {
-		trigger = {
-			faith.religion = faith:west_african_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_west_african_religion_duchy
+		localization_key = court_chaplain_lakeshore
 	}
 	
-	# Tengrism
+	#Industrial
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:tengri_pagan.religion
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_workers_of_the_world
+					this = faith:galvanist
+				}
+			}
+			
 		}
-		localization_key = councillor_court_chaplain_tengrism_religion_kingdom
+		localization_key = realm_priest_galvanist
 	}
 	text = {
 		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:tengri_pagan.religion
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_cult_of_the_titans
+					this = faith:promethean
+				}
+			}
+			
 		}
-		localization_key = councillor_court_chaplain_tengrism_religion_duchy
-	}
-
-	#Taoism
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = religion:taoism_religion
-		}
-		localization_key = councillor_court_chaplain_taoism_religion_kingdom
+		localization_key = realm_priest_promethean
 	}
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = religion:taoism_religion
-		}
-		localization_key = councillor_court_chaplain_taoism_religion_duchy
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = religion:taoism_religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
+			religion = religion:industrialist_religion
+			faith = {
+				NOR = {
+					has_doctrine = special_doctrine_workers_of_the_world
+					has_doctrine = special_doctrine_cult_of_the_titans
+					this = faith:galvanist
+					this = faith:promethean
 				}
 			}
 		}
-		localization_key = councillor_court_chaplain_taoism_religion_county
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = religion:taoism_religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_taoism_religion_county_female
-	}
-
-	#Finno-Ugric
-	text = {
-		trigger = {
-			faith.religion = faith:finnish_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_finno_ugric_religion_duchy
+		localization_key = realm_priest_industrial
 	}
 	
-	#Slavic
+	#Jewish
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:slavic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
+			religion = religion:judaism_religion
 		}
-		localization_key = councillor_court_chaplain_slavic_religion_kingdom
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:slavic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_slavic_religion_kingdom_female
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:slavic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_slavic_religion_duchy
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:slavic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_slavic_religion_duchy_female
-	}
-
-	#Baltic
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:baltic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_baltic_religion_duchy
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:baltic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_baltic_religion_duchy_female
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-			OR = {
-				faith.religion = faith:baltic_pagan.religion
-				faith.religion = faith:slavic_pagan.religion
-				faith.religion = faith:finnish_pagan.religion
-				faith.religion = faith:zun_pagan.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_baltic_religion_county
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-			OR = {
-				faith.religion = faith:baltic_pagan.religion
-				faith.religion = faith:slavic_pagan.religion
-				faith.religion = faith:finnish_pagan.religion
-				faith.religion = faith:zun_pagan.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_baltic_religion_county_female
-	}
-
-	#Magyarism
-	text = {
-		trigger = {
-			faith.religion = faith:magyar_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_magyarism_religion_county
-	}
-
-	#Judaism
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_empire
-			faith.religion = faith:rabbinism.religion
-		}
-		localization_key = councillor_court_chaplain_judaism_religion_empire
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:rabbinism.religion
-		}
-		localization_key = councillor_court_chaplain_judaism_religion_kingdom
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:rabbinism.religion
-		}
-		localization_key = councillor_court_chaplain_judaism_religion_duchy
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:rabbinism.religion
-		}
-		localization_key = councillor_court_chaplain_judaism_religion_county
+		localization_key = realm_priest_jewish
 	}
 	
-	#Hellenic
+	#Zetanology
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:hellenic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
+			faith = faith:zetanology
 		}
-		localization_key = councillor_court_chaplain_hellenism_religion_kingdom
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:hellenic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_hellenism_religion_kingdom_female
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:hellenic_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_hellenism_religion_duchy
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:hellenic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_hellenism_religion_county
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:hellenic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_hellenism_religion_county_female
-	}
-
-	#Norse
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:norse_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_germanic_religion_kingdom
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:norse_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_germanic_religion_duchy
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:norse_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_germanic_religion_county
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:norse_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_germanic_religion_county_female
-	}
-
-	#Dualism
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:manichean.religion
-		}
-		localization_key = councillor_court_chaplain_dualism_religion_county
-	}
-
-	#Bon
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:bon.religion
-		}
-		localization_key = councillor_court_chaplain_bon_religion_kingdom
-	}
-
-	# Japanese Buddhism
-	text = {
-		trigger = {
-			culture = { has_cultural_pillar = language_japonic }
-			religion = religion:buddhism_religion
-		}
-		localization_key = councillor_court_chaplain_japanese_buddhism_religion
-	}
-
-	# Korean Buddhism
-	text = {
-		trigger = {
-			highest_held_title_tier = tier_county
-			culture = {
-				OR = {
-					has_cultural_pillar = heritage_korean
-					has_cultural_pillar = heritage_buyeo
-				}
-			}
-			religion = religion:buddhism_religion
-		}
-		localization_key = councillor_court_chaplain_buddhist_korean_county
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier = tier_duchy
-			culture = {
-				OR = {
-					has_cultural_pillar = heritage_korean
-					has_cultural_pillar = heritage_buyeo
-				}
-			}
-			religion = religion:buddhism_religion
-		}
-		localization_key = councillor_court_chaplain_buddhist_korean_duchy
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier = tier_kingdom
-			culture = {
-				OR = {
-					has_cultural_pillar = heritage_korean
-					has_cultural_pillar = heritage_buyeo
-				}
-			}
-			OR = {
-				faith = faith:dhyana
-				AND = {
-					faith = { has_doctrine = tenet_no_mind }
-					religion = religion:buddhism_religion
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_seon_korean_kingdom
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier = tier_kingdom
-			culture = {
-				OR = {
-					has_cultural_pillar = heritage_korean
-					has_cultural_pillar = heritage_buyeo
-				}
-			}
-			religion = religion:buddhism_religion
-		}
-		localization_key = councillor_court_chaplain_buddhist_korean_kingdom
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_empire
-			culture = {
-				OR = {
-					has_cultural_pillar = heritage_korean
-					has_cultural_pillar = heritage_buyeo
-				}
-			}
-			OR = {
-				faith = faith:dhyana
-				AND = {
-					faith = { has_doctrine = tenet_no_mind }
-					religion = religion:buddhism_religion
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_seon_korean_empire
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_empire
-			culture = {
-				OR = {
-					has_cultural_pillar = heritage_korean
-					has_cultural_pillar = heritage_buyeo
-				}
-			}
-			religion = religion:buddhism_religion
-		}
-		localization_key = councillor_court_chaplain_buddhist_korean_empire
-	}
-
-	# Viet Buddhism
-	text = {
-		trigger = {
-			culture = { has_cultural_pillar = language_vietnamese }
-			religion = religion:buddhism_religion
-		}
-		localization_key = councillor_court_chaplain_buddhist_viet
-	}
-
-	#Buddhism/Hinduism/Jainism
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_empire
-			OR = {
-				faith.religion = faith:theravada.religion
-				faith.religion = faith:vaishnavism.religion
-				faith.religion = faith:digambara.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_buddhism_religion_empire
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			OR = {
-				faith.religion = faith:theravada.religion
-				faith.religion = faith:vaishnavism.religion
-				faith.religion = faith:digambara.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_buddhism_religion_kingdom
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			OR = {
-				faith.religion = faith:theravada.religion
-				faith.religion = faith:vaishnavism.religion
-				faith.religion = faith:digambara.religion
-				faith.religion = faith:bon.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_buddhism_religion_duchy
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			OR = {
-				faith.religion = faith:theravada.religion
-				faith.religion = faith:vaishnavism.religion
-				faith.religion = faith:digambara.religion
-				faith.religion = faith:bon.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_buddhism_religion_county
-	}
-
-	#Shia
-	text = {
-		trigger = { highest_held_title_tier >= tier_empire faith = faith:ismaili }
-		localization_key = councillor_court_chaplain_ismaili_empire
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_kingdom faith = faith:ismaili }
-		localization_key = councillor_court_chaplain_ismaili_kingdom
-	}
-	text = {
-		trigger = { highest_held_title_tier < tier_duchy faith = faith:ismaili }
-		localization_key = councillor_court_chaplain_ismaili_county
-	}
-
-	#Islam
-	text = {
-		trigger = { highest_held_title_tier >= tier_empire faith.religion = faith:ashari.religion }
-		localization_key = councillor_court_chaplain_islam_empire
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_kingdom faith.religion = faith:ashari.religion }
-		localization_key = councillor_court_chaplain_islam_kingdom
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_duchy faith.religion = faith:ashari.religion }
-		localization_key = councillor_court_chaplain_islam_duchy
-	}
-	text = {
-		trigger = { highest_held_title_tier < tier_duchy faith.religion = faith:ashari.religion }
-		localization_key = councillor_court_chaplain_islam_county
-	}
-
-	#Yazidi
-	text = {
-		trigger = { highest_held_title_tier >= tier_empire faith.religion = faith:yazidi.religion }
-		localization_key = councillor_court_chaplain_yazidi_empire
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_kingdom faith.religion = faith:yazidi.religion }
-		localization_key = councillor_court_chaplain_yazidi_kingdom
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_duchy faith.religion = faith:yazidi.religion }
-		localization_key = councillor_court_chaplain_yazidi_duchy
-	}
-	text = {
-		trigger = { highest_held_title_tier < tier_duchy faith.religion = faith:yazidi.religion }
-		localization_key = councillor_court_chaplain_yazidi_county
-	}
-
-	#Orthodox
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_empire
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_empire
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_empire
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_empire_female
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_kingdom
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_kingdom_female
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_duchy
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_county
-	}
-
-	#Christian
-	text = {
-		trigger = { 
-			highest_held_title_tier >= tier_empire 
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-			faith.religion = faith:catholic.religion 
-		}
-		localization_key = councillor_court_chaplain_christian_empire
-	}
-	text = {
-		trigger = { 
-			highest_held_title_tier >= tier_empire 
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-			faith.religion = faith:catholic.religion 
-		}
-		localization_key = councillor_court_chaplain_christian_empire_female
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_kingdom faith.religion = faith:catholic.religion }
-		localization_key = councillor_court_chaplain_christian_kingdom
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_duchy faith.religion = faith:catholic.religion }
-		localization_key = councillor_court_chaplain_christian_duchy
-	}
-	text = {
-		trigger = { highest_held_title_tier < tier_duchy faith.religion = faith:catholic.religion }
-		localization_key = councillor_court_chaplain_christian_county
-	}
-
-	#Basque Paganism
-	text = {
-		trigger = {
-			religion = religion:basque_religion
-		}
-		localization_key = council_basque_priest
+		localization_key = realm_priest_zetanology
 	}
 	
-	# Shinto
+	#Tranquillism
 	text = {
 		trigger = {
-			religion = religion:shintoism_religion
+			faith = faith:tranquillism
 		}
-		localization_key = councillor_court_chaplain_shintoism_religion
+		localization_key = realm_priest_tranquillism
 	}
-
-	#Paganism
+	
+	#LDS
 	text = {
 		trigger = {
-			faith = { has_doctrine = pagan_hostility_doctrine }
-			highest_held_title_tier >= tier_kingdom
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
+			religion = religion:mormon_religion
+		}
+		localization_key = realm_priest_mormon
+	}
+	
+	#Court Pastor
+	text = {
+		trigger = {
+			faith = {
+				OR = {
+					this = faith:evangelical
+					this = faith:jesusfreak
+					this = faith:redemptionist
+					this = faith:river_baptist
+					this = faith:springsearcher
 				}
 			}
 		}
-		localization_key = councillor_court_chaplain_paganism_religion_kingdom
+		localization_key = realm_priest_evangelical
+	}
+	
+	#Vernacular
+	text = {
+		trigger = {
+			faith = faith:revelationist
+		}
+		localization_key = realm_priest_revelationist
+	}
+	
+	text = {
+		trigger = {
+			faith = faith:omenteller
+		}
+		localization_key = realm_priest_omenteller
+	}
+	
+	#Trailwalker
+	text = {
+		trigger = {
+			or = {
+			faith = faith:interranger
+			faith = faith:dustrider
+			faith = faith:midnight_sun
+			faith = faith:real_road
+			faith = faith:sagestepper
+			faith = faith:saguarorrinche } 
+		}
+		localization_key = realm_priest_trailwalker
+	}
+	
+	#Rivertracer
+	text = {
+		trigger = { faith = faith:rivertracer
+			
+		}
+		localization_key = rivertracer_priest
+	}
+
+	#Gnarlism
+	text = {
+		trigger = {
+			faith = faith:gnarlist
+			is_female = no
+		}
+		localization_key = realm_priest_male_gnarlist
 	}
 	text = {
 		trigger = {
-			faith = { has_doctrine = pagan_hostility_doctrine }
-			highest_held_title_tier >= tier_kingdom
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
+			faith = faith:gnarlist
+			is_female = yes
+		}
+		localization_key = realm_priest_female_gnarlist
+	}
+	
+	#Santeria
+	text = {
+		trigger = {
+			faith = faith:lucumi
+			is_female = no
+		}
+		localization_key = realm_priest_male_santeria
+	}
+	text = {
+		trigger = {
+			faith = faith:lucumi
+			is_female = yes
+		}
+		localization_key = realm_priest_female_santeria
+	}
+	
+	#Palo
+	text = {
+		trigger = {
+			faith = faith:palo
+			is_female = no
+		}
+		localization_key = realm_priest_male_palo
+	}
+	text = {
+		trigger = {
+			faith = faith:palo
+			is_female = yes
+		}
+		localization_key = realm_priest_female_palo
+	}
+	
+	#Vodou
+	text = {
+		trigger = {
+			faith = faith:vodou
+			is_female = no
+		}
+		localization_key = realm_priest_male_vodou
+	}
+	text = {
+		trigger = {
+			faith = faith:vodou
+			is_female = yes
+		}
+		localization_key = realm_priest_female_vodou
+	}
+	
+	#Voodoo
+	text = {
+		trigger = {
+			faith = faith:voodoo
+			is_female = no
+		}
+		localization_key = realm_priest_male_voodoo
+	}
+	text = {
+		trigger = {
+			faith = faith:voodoo
+			is_female = yes
+		}
+		localization_key = realm_priest_female_voodoo
+	}
+	
+	#Candomble + Tambor de Mina
+	text = {
+		trigger = {
+			OR = {
+				faith = faith:candomble
+				faith = faith:tambor_de_mina
+			}
+			is_female = no
+		}
+		localization_key = realm_priest_male_candomble_tambor
+	}
+	text = {
+		trigger = {
+			OR = {
+				faith = faith:candomble
+				faith = faith:tambor_de_mina
+			}
+			is_female = yes
+		}
+		localization_key = realm_priest_female_candomble_tambor
+	}
+	
+	#Rezadeiros
+	text = {
+		trigger = {
+			religion = religion:rezadeiros_religion
+			is_female = no
+		}
+		localization_key = court_chaplain_rezadeiro
+	}
+	text = {
+		trigger = {
+			religion = religion:rezadeiros_religion
+			is_female = yes
+		}
+		localization_key = court_chaplain_rezadeiro_female
+	}
+	
+	#Spiritist
+	text = {
+		trigger = {
+			religion = religion:spiritualist_religion
+			NOT = {
+				faith = faith:transcendentalist
+			}
+		}
+		localization_key = court_chaplain_espiritist
+	}
+	text = {
+		trigger = {
+			faith = faith:transcendentalist
+		}
+		localization_key = court_chaplain_transcendentalist
+	}
+	
+	#Head Dryad
+	text = {
+		trigger = {
+			faith = {
+				OR = {
+					this = faith:gaian
+					this = faith:holocenian
+					this = faith:revengeant
 				}
 			}
 		}
-		localization_key = councillor_court_chaplain_paganism_religion_kingdom_female
+		localization_key = councillor_court_chaplain_dryad
 	}
+	
+	#Modernists
 	text = {
 		trigger = {
-			faith = { has_doctrine = pagan_hostility_doctrine }
-			highest_held_title_tier >= tier_duchy
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_worship_of_the_past
+					this = faith:macunaism
+				}
+			}
 		}
-		localization_key = councillor_court_chaplain_paganism_religion_duchy
+		localization_key = court_chaplain_modernist_historian
 	}
+	
 	text = {
 		trigger = {
-			faith = { has_doctrine = pagan_hostility_doctrine }
-			highest_held_title_tier < tier_duchy
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_quest_for_the_future
+					this = faith:anthropophagic
+				}
+			}
 		}
-		localization_key = councillor_court_chaplain_paganism_religion_county
+		localization_key = court_chaplain_modernist_author
 	}
-
+	
 	#Fallback
 	text = {
 		trigger = { 
@@ -1605,716 +1147,372 @@ GetActualBishopTitlePossessive = {
 	}
 	#Imperialis
 
-	# Zunism
+	#Remembrant
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:zun_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
+			faith.religion = faith:remembrant.religion
+			NOT = {
+				liege.dynasty = dynasty:dynn_canada_irving
+			}
+			NOT = {
+				liege.culture = { has_name_list = name_list_gaidheal }
 			}
 		}
-		localization_key = councillor_court_chaplain_zunism_religion_kingdom_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_kingdom
-			faith.religion = faith:zun_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_zunism_religion_duchy_possessive
+		localization_key = court_chaplain_remembrant_other_possessive
 	}
 
-	# Zoroastrianism
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:mazdayasna.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
+			faith.religion = faith:remembrant.religion
+			liege.culture = { has_name_list = name_list_gaidheal }
+		}
+		localization_key = court_chaplain_remembrant_gaelic_possessive
+	}
+
+	text = {
+		trigger = {
+			faith.religion = faith:remembrant.religion
+			liege.dynasty = dynasty:dynn_canada_irving
+		}
+		localization_key = court_chaplain_remembrant_irving_possessive
+	}
+
+	#Americanist
+	text = {
+		trigger = {
+			religion = religion:americanist_religion
+		}
+		localization_key = court_chaplain_americanist_possessive
+	}
+
+	#Rastafari
+	text = {
+		trigger = {
+			religion = religion:rastafari_religion
+		}
+		localization_key = court_chaplain_rastafari_possessive
+	}
+
+	#Consumerist
+	text = {
+		trigger = {
+			faith.religion = faith:consumerist.religion
+		}
+		localization_key = court_chaplain_consumerist_possessive
+	}
+
+	#Lacustrine
+	text = {
+		trigger = {
+			faith = {
+				has_doctrine = doctrine_viking_virsin
+			}
+			
+		}
+		localization_key = court_chaplain_norse_possessive
+	}
+	text = {
+		trigger = {
+			faith = {
+				has_doctrine = doctrine_lakeshore_virsin
 			}
 		}
-		localization_key = councillor_court_chaplain_zoroastrianism_religion_kingdom_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:mazdayasna.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_zoroastrianism_religion_kingdom_female_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:mazdayasna.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_zoroastrianism_religion_duchy_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:mazdayasna.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_zoroastrianism_religion_duchy_female_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:mazdayasna.religion
-		}
-		localization_key = councillor_court_chaplain_zoroastrianism_religion_county_possessive
-	}
-	# African Roog
-	text = {
-		trigger = {
-			faith.religion = faith:west_african_roog_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_west_african_roog_religion_duchy_possessive
-	}
-	# African Bori
-	text = {
-		trigger = {
-			faith.religion = faith:west_african_bori_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_west_african_bori_religion_duchy_possessive
-	}
-	text = {
-		trigger = {
-			faith.religion = faith:west_african_bori_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_west_african_bori_religion_duchy_female_possessive
-	}
-	# African
-	text = {
-		trigger = {
-			faith.religion = faith:west_african_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_west_african_religion_duchy_possessive
+		localization_key = court_chaplain_lakeshore_possessive
 	}
 	
-	# Tengrism
+	#Industrial
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:tengri_pagan.religion
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_workers_of_the_world
+					this = faith:galvanist
+				}
+			}
+			
 		}
-		localization_key = councillor_court_chaplain_tengrism_religion_kingdom_possessive
+		localization_key = realm_priest_galvanist_possessive
 	}
 	text = {
 		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:tengri_pagan.religion
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_cult_of_the_titans
+					this = faith:promethean
+				}
+			}
+			
 		}
-		localization_key = councillor_court_chaplain_tengrism_religion_duchy_possessive
-	}
-
-	#Taoism
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = religion:taoism_religion
-		}
-		localization_key = councillor_court_chaplain_taoism_religion_kingdom_possessive
+		localization_key = realm_priest_promethean_possessive
 	}
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = religion:taoism_religion
-		}
-		localization_key = councillor_court_chaplain_taoism_religion_duchy_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = religion:taoism_religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
+			religion = religion:industrialist_religion
+			faith = {
+				NOR = {
+					has_doctrine = special_doctrine_workers_of_the_world
+					this = faith:galvanist
+					this = faith:promethean
 				}
 			}
 		}
-		localization_key = councillor_court_chaplain_taoism_religion_county_possessive
+		localization_key = realm_priest_industrial_possessive
 	}
+	#Jewish
 	text = {
 		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = religion:taoism_religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
+			religion = religion:judaism_religion
 		}
-		localization_key = councillor_court_chaplain_taoism_religion_county_female_possessive
-	}
-
-	#Finno-Ugric
-	text = {
-		trigger = {
-			faith.religion = faith:finnish_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_finno_ugric_religion_duchy_possessive
+		localization_key = realm_priest_jewish_possessive
 	}
 	
-	#Slavic
+	#Zetanology
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:slavic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
+			faith = faith:zetanology
 		}
-		localization_key = councillor_court_chaplain_slavic_religion_kingdom_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:slavic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_slavic_religion_kingdom_female_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:slavic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_slavic_religion_duchy_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:slavic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_slavic_religion_duchy_female_possessive
-	}
-
-	#Baltic
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:baltic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_baltic_religion_duchy_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:baltic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-		}
-		localization_key = councillor_court_chaplain_baltic_religion_duchy_female_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-			OR = {
-				faith.religion = faith:baltic_pagan.religion
-				faith.religion = faith:slavic_pagan.religion
-				faith.religion = faith:finnish_pagan.religion
-				faith.religion = faith:zun_pagan.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_baltic_religion_county_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-			OR = {
-				faith.religion = faith:baltic_pagan.religion
-				faith.religion = faith:slavic_pagan.religion
-				faith.religion = faith:finnish_pagan.religion
-				faith.religion = faith:zun_pagan.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_baltic_religion_county_female_possessive
-	}
-
-	#Magyarism
-	text = {
-		trigger = {
-			faith.religion = faith:magyar_pagan.religion
-		}
-		localization_key = councillor_court_chaplain_magyarism_religion_county_possessive
-	}
-
-	#Judaism
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_empire
-			faith.religion = faith:rabbinism.religion
-		}
-		localization_key = councillor_court_chaplain_judaism_religion_empire_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:rabbinism.religion
-		}
-		localization_key = councillor_court_chaplain_judaism_religion_kingdom_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:rabbinism.religion
-		}
-		localization_key = councillor_court_chaplain_judaism_religion_duchy_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:rabbinism.religion
-		}
-		localization_key = councillor_court_chaplain_judaism_religion_county_possessive
+		localization_key = realm_priest_zetanology_possessive
 	}
 	
-	#Hellenic
+	#Tranquillism
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:hellenic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
+			faith = faith:tranquillism
+		}
+		localization_key = realm_priest_tranquillism_possessive
+	}
+	
+	#LDS
+	text = {
+		trigger = {
+			religion = religion:mormon_religion
+		}
+		localization_key = realm_priest_mormon_possessive
+	}
+	
+	#Court Pastor
+	text = {
+		trigger = {
+			faith = {
+				OR = {
+					this = faith:evangelical
+					this = faith:jesusfreak
+					this = faith:redemptionist
+					this = faith:river_baptist
+					this = faith:springsearcher
 				}
 			}
 		}
-		localization_key = councillor_court_chaplain_hellenism_religion_kingdom_possessive
+		localization_key = realm_priest_evangelical_possessive
 	}
+	
+	#Vernacular
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:hellenic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
+			faith = faith:revelationist
 		}
-		localization_key = councillor_court_chaplain_hellenism_religion_kingdom_female_possessive
+		localization_key = realm_priest_revelationist_possessive
 	}
+	
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:hellenic_pagan.religion
+			faith = faith:omenteller
 		}
-		localization_key = councillor_court_chaplain_hellenism_religion_duchy_possessive
+		localization_key = realm_priest_omenteller_possessive
 	}
+	
+	#Trailwalker
 	text = {
 		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:hellenic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
+			or = {
+			faith = faith:interranger
+			faith = faith:dustrider
+			faith = faith:midnight_sun
+			faith = faith:real_road
+			faith = faith:sagestepper
+			faith = faith:saguarorrinche } 
 		}
-		localization_key = councillor_court_chaplain_hellenism_religion_county_possessive
+		localization_key = realm_priest_trailwalker_possessive
 	}
+	
+	#Rivertracer
 	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:hellenic_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
+		trigger = { faith = faith:rivertracer
+			
 		}
-		localization_key = councillor_court_chaplain_hellenism_religion_county_female_possessive
+		localization_key = rivertracer_priest
 	}
-
-	#Norse
+	
+	#Gnarlism
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:norse_pagan.religion
+			faith = faith:gnarlist
+			is_female = no
 		}
-		localization_key = councillor_court_chaplain_germanic_religion_kingdom_possessive
+		localization_key = realm_priest_male_gnarlist_possessive
 	}
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_duchy
-			faith.religion = faith:norse_pagan.religion
+			faith = faith:gnarlist
+			is_female = yes
 		}
-		localization_key = councillor_court_chaplain_germanic_religion_duchy_possessive
+		localization_key = realm_priest_female_gnarlist_possessive
 	}
+	
+	#Santeria
 	text = {
 		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:norse_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
+			faith = faith:lucumi
+			is_female = no
 		}
-		localization_key = councillor_court_chaplain_germanic_religion_county_possessive
+		localization_key = realm_priest_male_santeria_possessive
 	}
 	text = {
 		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:norse_pagan.religion
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
+			faith = faith:lucumi
+			is_female = yes
 		}
-		localization_key = councillor_court_chaplain_germanic_religion_county_female_possessive
+		localization_key = realm_priest_female_santeria_possessive
 	}
-
-	#Dualism
+	
+	#Palo
 	text = {
 		trigger = {
-			highest_held_title_tier < tier_duchy
-			faith.religion = faith:manichean.religion
+			faith = faith:palo
+			is_female = no
 		}
-		localization_key = councillor_court_chaplain_dualism_religion_county_possessive
+		localization_key = realm_priest_male_palo_possessive
 	}
-
-	#Bon
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			faith.religion = faith:bon.religion
+			faith = faith:palo
+			is_female = yes
 		}
-		localization_key = councillor_court_chaplain_bon_religion_kingdom_possessive
+		localization_key = realm_priest_female_palo_possessive
 	}
-
-	#Buddhism/Hinduism/Jainism
+	
+	#Vodou
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_empire
+			faith = faith:vodou
+			is_female = no
+		}
+		localization_key = realm_priest_male_vodou_possessive
+	}
+	text = {
+		trigger = {
+			faith = faith:vodou
+			is_female = yes
+		}
+		localization_key = realm_priest_female_vodou_possessive
+	}
+	
+	#Voodoo
+	text = {
+		trigger = {
+			faith = faith:voodoo
+			is_female = no
+		}
+		localization_key = realm_priest_male_voodoo_possessive
+	}
+	text = {
+		trigger = {
+			faith = faith:voodoo
+			is_female = yes
+		}
+		localization_key = realm_priest_female_voodoo_possessive
+	}
+	
+	#Candomble + Tambor de Mina
+	text = {
+		trigger = {
 			OR = {
-				faith.religion = faith:theravada.religion
-				faith.religion = faith:vaishnavism.religion
-				faith.religion = faith:digambara.religion
+				faith = faith:candomble
+				faith = faith:tambor_de_mina
 			}
+			is_female = no
 		}
-		localization_key = councillor_court_chaplain_buddhism_religion_empire_possessive
+		localization_key = realm_priest_male_candomble_tambor_possessive
 	}
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_kingdom
 			OR = {
-				faith.religion = faith:theravada.religion
-				faith.religion = faith:vaishnavism.religion
-				faith.religion = faith:digambara.religion
+				faith = faith:candomble
+				faith = faith:tambor_de_mina
 			}
+			is_female = yes
 		}
-		localization_key = councillor_court_chaplain_buddhism_religion_kingdom_possessive
+		localization_key = realm_priest_female_candomble_tambor_possessive
+	}
+	
+	#Rezadeiros
+	text = {
+		trigger = {
+			religion = religion:rezadeiros_religion
+			is_female = no
+		}
+		localization_key = court_chaplain_rezadeiro_possessive
 	}
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_duchy
-			OR = {
-				faith.religion = faith:theravada.religion
-				faith.religion = faith:vaishnavism.religion
-				faith.religion = faith:digambara.religion
-				faith.religion = faith:bon.religion
-			}
+			religion = religion:rezadeiros_religion
+			is_female = yes
 		}
-		localization_key = councillor_court_chaplain_buddhism_religion_duchy_possessive
+		localization_key = court_chaplain_rezadeiro_female_possessive
 	}
+	
+	#Spiritist
 	text = {
 		trigger = {
-			highest_held_title_tier < tier_duchy
-			OR = {
-				faith.religion = faith:theravada.religion
-				faith.religion = faith:vaishnavism.religion
-				faith.religion = faith:digambara.religion
-				faith.religion = faith:bon.religion
-			}
+			religion = religion:spiritualist_religion
 		}
-		localization_key = councillor_court_chaplain_buddhism_religion_county_possessive
+		localization_key = court_chaplain_espiritist_possessive
 	}
-
-	#Shia
-	text = {
-		trigger = { highest_held_title_tier >= tier_empire faith = faith:ismaili }
-		localization_key = councillor_court_chaplain_ismaili_empire_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_kingdom faith = faith:ismaili }
-		localization_key = councillor_court_chaplain_ismaili_kingdom_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier < tier_duchy faith = faith:ismaili }
-		localization_key = councillor_court_chaplain_ismaili_county_possessive
-	}
-
-	#Islam
-	text = {
-		trigger = { highest_held_title_tier >= tier_empire faith.religion = faith:ashari.religion }
-		localization_key = councillor_court_chaplain_islam_empire_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_kingdom faith.religion = faith:ashari.religion }
-		localization_key = councillor_court_chaplain_islam_kingdom_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_duchy faith.religion = faith:ashari.religion }
-		localization_key = councillor_court_chaplain_islam_duchy_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier < tier_duchy faith.religion = faith:ashari.religion }
-		localization_key = councillor_court_chaplain_islam_county_possessive
-	}
-
-	#Yazidi
-	text = {
-		trigger = { highest_held_title_tier >= tier_empire faith.religion = faith:yazidi.religion }
-		localization_key = councillor_court_chaplain_yazidi_empire_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_kingdom faith.religion = faith:yazidi.religion }
-		localization_key = councillor_court_chaplain_yazidi_kingdom_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_duchy faith.religion = faith:yazidi.religion }
-		localization_key = councillor_court_chaplain_yazidi_duchy_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier < tier_duchy faith.religion = faith:yazidi.religion }
-		localization_key = councillor_court_chaplain_yazidi_county_possessive
-	}
-
-	#Orthodox
+	
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_empire
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
+			faith = faith:transcendentalist
 		}
-		localization_key = councillor_court_chaplain_orthodox_empire_possessive
+		localization_key = court_chaplain_transcendentalist_possessive
 	}
+	
+	#Head Dryad
 	text = {
 		trigger = {
-			highest_held_title_tier >= tier_empire
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_empire_female_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_kingdom_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_kingdom
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_kingdom_female_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier >= tier_duchy
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_duchy_possessive
-	}
-	text = {
-		trigger = {
-			highest_held_title_tier < tier_duchy
-			OR = {
-				faith = faith:orthodox
-				faith.religion = faith:manichean.religion
-			}
-		}
-		localization_key = councillor_court_chaplain_orthodox_county_possessive
-	}
-
-	#Christian
-	text = {
-		trigger = { 
-			highest_held_title_tier >= tier_empire 
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
-				}
-			}
-			faith.religion = faith:catholic.religion 
-		}
-		localization_key = councillor_court_chaplain_christian_empire_possessive
-	}
-	text = {
-		trigger = { 
-			highest_held_title_tier >= tier_empire 
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
-				}
-			}
-			faith.religion = faith:catholic.religion 
-		}
-		localization_key = councillor_court_chaplain_christian_empire_female_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_kingdom faith.religion = faith:catholic.religion }
-		localization_key = councillor_court_chaplain_christian_kingdom_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier >= tier_duchy faith.religion = faith:catholic.religion }
-		localization_key = councillor_court_chaplain_christian_duchy_possessive
-	}
-	text = {
-		trigger = { highest_held_title_tier < tier_duchy faith.religion = faith:catholic.religion }
-		localization_key = councillor_court_chaplain_christian_county_possessive
-	}
-	# Shinto
-	text = {
-		trigger = {
-			religion = religion:shintoism_religion
-		}
-		localization_key = councillor_court_chaplain_shintoism_religion_possessive
-	}
-
-	#Paganism
-	text = {
-		trigger = {
-			faith = { has_doctrine = pagan_hostility_doctrine }
-			highest_held_title_tier >= tier_kingdom
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = yes
+			faith = {
+				OR = {
+					this = faith:gaian
+					this = faith:holocenian
+					this = faith:revengeant
 				}
 			}
 		}
-		localization_key = councillor_court_chaplain_paganism_religion_kingdom_possessive
+		localization_key = councillor_court_chaplain_dryad_possessive
 	}
+	
+	#Modernists
 	text = {
 		trigger = {
-			faith = { has_doctrine = pagan_hostility_doctrine }
-			highest_held_title_tier >= tier_kingdom
-			NOT = { # Required formatting to include male/female check as well as vacancy
-				cp:councillor_court_chaplain ?= {
-					is_female = no
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_worship_of_the_past
+					this = faith:macunaism
 				}
 			}
 		}
-		localization_key = councillor_court_chaplain_paganism_religion_kingdom_female_possessive
+		localization_key = court_chaplain_modernist_historian_possessive
 	}
+	
 	text = {
 		trigger = {
-			faith = { has_doctrine = pagan_hostility_doctrine }
-			highest_held_title_tier >= tier_duchy
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_quest_for_the_future
+					this = faith:anthropophagic
+				}
+			}
 		}
-		localization_key = councillor_court_chaplain_paganism_religion_duchy_possessive
-	}
-	text = {
-		trigger = {
-			faith = { has_doctrine = pagan_hostility_doctrine }
-			highest_held_title_tier < tier_duchy
-		}
-		localization_key = councillor_court_chaplain_paganism_religion_county_possessive
+		localization_key = court_chaplain_modernist_author_possessive
 	}
 
 	#Fallback
@@ -2373,10 +1571,6 @@ GetTaltosTerm = {
 	type = character
 
 	text = {
-		trigger = {	religion = religion:magyar_religion }
-		localization_key = chosen_one_taltos
-	}
-	text = {
 		trigger = {
 			always = no
 		}
@@ -2390,7 +1584,16 @@ GetReligiousRite = {
 
 	text = {
 		localization_key = rite_mass
-		trigger = { faith = { religion = religion:christianity_religion } }
+		trigger = {
+			faith = { 
+				OR = { 
+					religion_tag = catholic_religion
+					#religion_tag = protestant_religion
+					#religion_tag = mormon_religion
+					#religion_tag = eastern_christian_religion
+				}
+			}
+		 }
 	}
 	text = {
 		localization_key = rite_prayer
@@ -2399,7 +1602,6 @@ GetReligiousRite = {
 				OR = {
 					religion = religion:islam_religion
 					religion = religion:judaism_religion
-					religion = { is_in_family = rf_eastern }
 				}
 			}
 		}
@@ -2417,24 +1619,24 @@ GetReligiousRite = {
 }
 
 # Doctrine Parameters
-GetRiteEcumenismFullOrEmpty = {
-	type = character
-
-	text = {
-		trigger = {
-			faith = { has_doctrine = special_doctrine_ecumenical_christian }
-		}
-		localization_key = GetRiteEcumenismFullOrEmpty_full
-	}
-	text = {
-		trigger = {
-			NOT = {
-				faith = { has_doctrine = special_doctrine_ecumenical_christian }
-			}
-		}
-		localization_key = GetRiteEcumenismFullOrEmpty_empty
-	}
-}
+#GetRiteEcumenismFullOrEmpty = {
+#	type = character
+#
+#	text = {
+#		trigger = {
+#			faith = { has_doctrine = special_doctrine_ecumenical_christian }
+#		}
+#		localization_key = GetRiteEcumenismFullOrEmpty_full
+#	}
+#	text = {
+#		trigger = {
+#			NOT = {
+#				faith = { has_doctrine = special_doctrine_ecumenical_christian }
+#			}
+#		}
+#		localization_key = GetRiteEcumenismFullOrEmpty_empty
+#	}
+#}
 
 # Does the character's faith have Armed Pilgrimages or Struggle & Submission?
 ghw_from_which_tenet = {

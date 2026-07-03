@@ -1,4 +1,4 @@
-k_sol = {
+﻿k_sol = {
 	pattern = "pattern_solid.dds"
 	color1 = "red"
 	color2 = "yellow"

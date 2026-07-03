@@ -1,82 +1,165 @@
-﻿sanguini_1 = {
-	opposites = { sanguini_2 }
-
+﻿### The Blood of Sanguini
+sanguini_1 = {
 	inbreeding_chance = -1
-	health = 0.25
-	attraction_opinion = 5
-	monthly_prestige = 0.05
-	diplomacy = 1
-	learning = 5
-	prowess = 20
-	monthly_lifestyle_xp_gain_mult = 0.2
-	fertility = -0.25
-
-	group = sanguini
-	level = 1
-
-
-	good = yes
-	physical = yes
-
-	birth = 0
-	random_creation = 0
-
-	
-	ruler_designer_cost = 5
 	icon = sanguini_1.dds
-
+	ruler_designer_cost = 20
+	group = sanguini
+	category = health
+	level = 1
 	desc = {
 		first_valid = {
 			triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_sanguini_1_desc }
 			desc = trait_sanguini_1_character_desc
 		}
 	}
-	ai_rationality = high_positive_ai_value
-	compatibility = {
-		sanguini_1 = @pos_compat_medium
-		sanguini_2 = @pos_compat_medium
-	}
+	flag = lower_chance_of_dying_in_combat
+	genetic = yes
+	good = yes
+	random_creation = 0
+	negate_health_penalty_add = 0.25
+	fertility = -0.05
+	health = 0.2
+	learning = 10
+	prowess = 10
+	life_expectancy = 20
+	years_of_fertility = 10
+	stress_gain_mult = -0.05
+	# same_opinion = 15
+	monthly_lifestyle_xp_gain_mult = 0.2
 }
 
 sanguini_2 = {
-	opposites = { sanguini_1 }
-
 	inbreeding_chance = -1
-	health = 0.5
-	attraction_opinion = 10
-	monthly_prestige = 0.10
-	diplomacy = 2
-	learning = 10
-	prowess = 100
-	monthly_lifestyle_xp_gain_mult = 0.5
-	fertility = -0.50
-
-	group = sanguini
-	level = 2
-
-	good = yes
-	physical = yes
-
-	birth = 0
-	random_creation = 0
-
-
-	ruler_designer_cost = 10
 	icon = sanguini_2.dds
-
+	ruler_designer_cost = 40
+	group = sanguini
+	category = health
+	level = 2
 	desc = {
 		first_valid = {
 			triggered_desc = { trigger = { NOT = { exists = this } } desc = trait_sanguini_2_desc }
 			desc = trait_sanguini_2_character_desc
 		}
 	}
-	ai_rationality = very_high_positive_ai_value
-	compatibility = {
-		sanguini_1 = @pos_compat_medium
-		sanguini_2 = @pos_compat_medium
-	}
+	flag = lower_chance_of_dying_in_combat
+	genetic = yes
+	good = yes
+	random_creation = 0
+	negate_health_penalty_add = 0.4
+	fertility = -0.05
+	health = 0.4
+	learning = 10
+	prowess = 20
+	life_expectancy = 20
+	years_of_fertility = 10
+	stress_gain_mult = -0.1
+	monthly_lifestyle_xp_gain_mult = 0.2
 }
 
+sanguini_3 = {
+	inbreeding_chance = -1
+	icon = sanguini_3.dds
+	ruler_designer_cost = 60
+	group = sanguini
+	category = health
+	level = 3
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_sanguini_3_desc
+			}
+			desc = trait_sanguini_3_character_desc
+		}
+	}
+	flag = lower_chance_of_dying_in_combat
+	genetic = yes
+	good = yes
+	random_creation = 0
+	negate_health_penalty_add = 0.5
+	fertility = -0.1
+	health = 0.6
+	learning = 15
+	prowess = 30
+	life_expectancy = 20
+	years_of_fertility = 10
+	stress_gain_mult = -0.15
+	monthly_lifestyle_xp_gain_mult = 0.2
+}
+
+sanguini_4 = {
+	inbreeding_chance = -1
+	icon = sanguini_4.dds
+	ruler_designer_cost = 80
+	group = sanguini
+	category = health
+	level = 4
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_sanguini_4_desc
+			}
+			desc = trait_sanguini_4_character_desc
+		}
+	}
+	flag = lower_chance_of_dying_in_combat
+	genetic = yes
+	good = yes
+	random_creation = 0
+	negate_health_penalty_add = 0.55
+	fertility = -0.1
+	health = 0.8
+	learning = 20
+	prowess = 40
+	life_expectancy = 20
+	years_of_fertility = 10
+	stress_gain_mult = -0.2
+	monthly_lifestyle_xp_gain_mult = 0.5
+}
+
+sanguini_5 = {
+	inbreeding_chance = -1
+	icon = sanguini_5.dds
+	ruler_designer_cost = 100
+	group = sanguini
+	category = health
+	level = 5
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_sanguini_5_desc
+			}
+			desc = trait_sanguini_5_character_desc
+		}
+	}
+	flag = lower_chance_of_dying_in_combat
+	genetic = yes
+	good = yes
+	random_creation = 0
+	negate_health_penalty_add = 0.6
+	fertility = -0.5
+	health = 1
+	learning = 25
+	prowess = 50
+	life_expectancy = 20
+	years_of_fertility = 10
+	stress_gain_mult = -0.25
+	monthly_lifestyle_xp_gain_mult = 0.5
+}
 
 apostolus = {
 	category = fame

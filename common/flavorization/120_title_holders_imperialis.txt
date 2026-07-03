@@ -1,14 +1,12 @@
-king_theocracy_male_imperialis_religion = {
+﻿king_theocracy_male_imperialis_religion = {
 	type = character
 	gender = male
 	special = holder
 	tier = kingdom
 	priority = 50
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	governments = { theocracy_government }
-	religions = { imperialis_religion }
+	faiths = { imperialis sororitas omnissiah homus }
 }
 king_theocracy_female_imperialis_religion = {
 	type = character
@@ -16,9 +14,7 @@ king_theocracy_female_imperialis_religion = {
 	special = holder
 	tier = kingdom
 	priority = 50
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
 }
@@ -27,11 +23,10 @@ kingdom_theocracy_imperialis_religion = {
 	tier = kingdom
 	priority = 47
 	holding = church_holding
+	
 	religions = { imperialis_religion }
 	governments = { theocracy_government }
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 }
 emperor_theocracy_male_imperialis_religion = {
 	type = character
@@ -39,9 +34,7 @@ emperor_theocracy_male_imperialis_religion = {
 	special = holder
 	tier = empire
 	priority = 102
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
 }
@@ -51,9 +44,7 @@ emperor_theocracy_female_imperialis_religion = {
 	special = holder
 	tier = empire
 	priority = 102
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
 }
@@ -61,11 +52,10 @@ empire_theocracy_imperialis_religion = {
 	type = title
 	tier = empire
 	priority = 102
+
 	religions = { imperialis_religion }
 	governments = { theocracy_government }
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 }
 baron_theocracy_male_imperialis_religion = {
 	type = character
@@ -73,9 +63,7 @@ baron_theocracy_male_imperialis_religion = {
 	special = holder
 	tier = barony
 	priority = 10
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
 }
@@ -85,9 +73,7 @@ baron_theocracy_female_imperialis_religion = {
 	special = holder
 	tier = barony
 	priority = 10
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
 }
@@ -98,9 +84,7 @@ barony_theocracy_imperialis_religion = {
 	priority = 10
 	holding = church_holding
 	religions = { imperialis_religion }
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 }
 count_theocracy_male_imperialis_religion = {
 	type = character
@@ -108,9 +92,7 @@ count_theocracy_male_imperialis_religion = {
 	special = holder
 	tier = county
 	priority = 20
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
 }
@@ -120,9 +102,7 @@ count_theocracy_female_imperialis_religion = {
 	special = holder
 	tier = county
 	priority = 20
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
 }
@@ -130,9 +110,7 @@ count_theocracy_female_imperialis_religion = {
 county_theocracy_imperialis_religion = {
 	type = title
 	tier = county
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	priority = 20
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
@@ -143,9 +121,7 @@ duke_theocracy_male_imperialis_religion = {
 	special = holder
 	tier = duchy
 	priority = 30
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
 }
@@ -155,9 +131,7 @@ duke_theocracy_female_imperialis_religion = {
 	special = holder
 	tier = duchy
 	priority = 30
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
 }
@@ -165,9 +139,7 @@ duke_theocracy_female_imperialis_religion = {
 duchy_theocracy_imperialis_religion = {
 	type = title
 	tier = duchy
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 	priority = 30
 	governments = { theocracy_government }
 	religions = { imperialis_religion }
@@ -177,21 +149,17 @@ solis_man = {
 	type = character
 	gender = male
 	special = head_of_faith
-	priority = 500
+	priority = 1000
 	titles = { k_sol }
 	#top_liege = no
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 }
 solis_woman = {
 	type = character
 	gender = female
 	special = head_of_faith
-	priority = 500
+	priority = 1000
 	titles = { k_sol }
 	#top_liege = no
-	flavourization_rules = { 
-		top_liege = no
-	}
+	
 }
