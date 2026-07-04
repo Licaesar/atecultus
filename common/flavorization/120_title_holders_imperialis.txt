@@ -148,8 +148,9 @@ duchy_theocracy_imperialis_religion = {
 solis_man = {
 	type = character
 	gender = male
-	special = head_of_faith
-	priority = 1000
+	special = holder
+	priority = 20000
+	#special = head_of_faith
 	titles = { k_sol }
 	#top_liege = no
 	
@@ -157,8 +158,9 @@ solis_man = {
 solis_woman = {
 	type = character
 	gender = female
-	special = head_of_faith
-	priority = 1000
+	special = holder
+	priority = 20000
+	#special = head_of_faith
 	titles = { k_sol }
 	#top_liege = no
 	

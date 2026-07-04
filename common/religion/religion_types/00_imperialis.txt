@@ -324,7 +324,7 @@
 
 			doctrine = tenet_mendicant_preachers
 			doctrine = tenet_legalism
-			doctrine = tenet_ancestor_worship
+			doctrine = tenet_aniconism
 			
 			#Main Group
 			doctrine = doctrine_spiritual_head
@@ -370,7 +370,7 @@
 
 			doctrine = tenet_mendicant_preachers
 			doctrine = tenet_esotericism
-			doctrine = tenet_ancestor_worship
+			doctrine = tenet_asceticism
 			
 			#Main Group
 			doctrine = doctrine_no_head
